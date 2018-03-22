@@ -38,6 +38,17 @@ class Loopy {
   }
 
   /**
+   * @name logout
+   * @description Logs out of loop
+   * @return {Promise}
+   */
+  logout(){
+    if(!this.user) throw new Error('User object cannot be empty. Please try logging in')
+    const { customerId } = this.user
+    return instance.post('/customer/logout', { customerId })
+  }
+
+  /**
    * Set the authCode manually
    * This is because Loop rejects logins which are around 5min apart
    * You can store the authCode and load it later
