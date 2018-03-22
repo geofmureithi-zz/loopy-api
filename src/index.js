@@ -237,8 +237,29 @@ class Loopy {
     })
   }
 
-  sendToBankViaRtgs(){
-    // TODO: not yet performed
+  // recipient = { address, name, accountId}
+  // TODO :
+  sendToBankViaRtgs(bank, recipient, amount, purpose){
+    if(!this.user) throw new Error('User object cannot be empty. Please try logging in')
+    const { customerId } = this.user
+    return this.instance.post(`/customer/transfers/transferToMobile`, {
+      customerId,
+      amount,
+      branchId: 0,
+      bank: bank.name,
+      categoryId: 39,
+      categoryName: 'Cash, Transfers',
+      frequencyOfPayment: 0,
+      isRegularPayment: 0,
+      mobileNumber: msisdn,
+      mobileNumberCCode: 'KE',
+      purpose,
+      subcategoryId: 43,
+      swiftCode: bank.swiftCode,
+      dstAccount:
+      subcategoryName: 'Internal Money Transfer',
+      transferMethod: 3 //pesalink i guess
+    })
   }
 
   sendToBankViaEft(){
