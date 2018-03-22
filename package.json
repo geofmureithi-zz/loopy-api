@@ -1,0 +1,35 @@
+{
+  "name": "loopy-api",
+  "version": "0.1.0",
+  "description": "Loopy Api is the unofficial API to connect to CBA Loop. Allows you to move money to banks and mpesa",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test-unit && npm run test-integration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geofmureithi/loopy-api.git"
+  },
+  "keywords": [
+    "bank-to-bank",
+    "bank-to-mpesa",
+    "mpesa"
+  ],
+  "author": "geofmureithi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geofmureithi/loopy-api/issues"
+  },
+  "homepage": "https://github.com/geofmureithi/loopy-api#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "enumify": "^1.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "mocha": "^5.0.4",
+    "standard": "^11.0.1",
+    "supertest": "^3.0.0"
+  }
+}
